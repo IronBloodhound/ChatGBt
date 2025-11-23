@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tone.js Step Sequencer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Interactive Web Synth</h1>
+      <p>Create beats and melodies with a 16-step sequencer powered by Tone.js.</p>
+    </header>
+
+    <section class="controls">
+      <button id="start-audio">Start Audio</button>
+      <button id="play-toggle" disabled>Play</button>
+      <button id="stop" disabled>Stop</button>
+      <label>
+        Tempo
+        <input id="tempo" type="range" min="60" max="180" value="110" />
+        <span id="tempo-value">110 BPM</span>
+      </label>
+      <label>
+        Swing
+        <input id="swing" type="range" min="0" max="70" value="0" step="5" />
+        <span id="swing-value">0%</span>
+      </label>
+      <button id="randomize" disabled>Randomize</button>
+      <button id="clear" disabled>Clear</button>
+    </section>
+
+    <section class="sequencer">
+      <div class="sequencer-grid" id="grid"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
